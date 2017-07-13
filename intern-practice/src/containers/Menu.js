@@ -9,10 +9,9 @@ import {Item} from '../components/Item'
 
 class Menu extends Component{
     render(){
-        this.q = this.props.ItemState.item;
+        const q = this.props.ItemState.map(item=>({...item.itemQuantity}));
         const menuList=this.props.info;
-        console.log('this is q', this.props.itemQuantity);
-        console.log('this is props',this.props);
+        console.log('this is q', q);
         return(
             <div className="menu">
                 {menuList.map((info)=><Item  onAdd={this.props.onAddItem} {...info}/>)}

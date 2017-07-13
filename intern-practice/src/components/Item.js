@@ -27,7 +27,7 @@ class  Item extends Component{
 
     };
     render() {
-        console.log(this.props);
+        console.log('this is item props',this.props);
         return (
             <div>
                 <div style={{color: 'antiquewhite'}}>

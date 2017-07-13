@@ -8,13 +8,14 @@ class ShopCard extends Component{
 
 
     render(){
+        console.log(this.props.ItemsArray)
         return(
             <div className="shopCard">
                 <div>{this.props.ItemsArray.map((item)=>
                     <div className="cardItems">
-                        <ul className="cardName">{item.name}</ul>
-                        <ul className="cardCost">{item.cost}</ul>
-                        <ul className="cardQ">{item.quantity}</ul>
+                        <ul className="cardName">{item.itemName.name}</ul>
+                        <ul className="cardCost">{item.itemCost.cost}</ul>
+                        <ul className="cardQ">{item.itemQuantity.quantity}</ul>
                     </div>)}
                 </div>
 
