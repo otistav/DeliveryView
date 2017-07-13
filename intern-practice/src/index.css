@@ -1,0 +1,97 @@
+body{
+  background-image: url('./images/food.jpg');
+}
+.Head{
+  color: white;
+  position: fixed;
+  top: 0%;
+  font-size: 300%;
+  margin: 1%;
+  background-image: url('./images/border.jpg');
+  border: 30px ridge;
+  padding-left: 40%;
+  padding-right: 40%;
+}
+.active{
+  font-weight: bold;
+  font-size: 19px;
+  color: black;
+
+}
+
+.LeftMenu{
+  position: fixed;
+  top:20%;
+  left:0%;
+  background-color: antiquewhite ;
+  padding:10px;
+  margin: 5px;
+}
+
+.menu {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 30%;
+  background-image: url("./images/border.jpg");
+
+}
+.input[type="text"]{
+  border: 2px solid #cccccc;
+  border-radius: 3px;
+  background: #ffffff !important;
+  outline: none;
+  height: 24px;
+  width: 24px;
+  color: black;
+  font-size: 20px;
+}
+
+.shopCard{
+  display:inline;
+  position: fixed;
+  transition: 2s all;
+
+  background-color: orange;
+  width: 204px;
+  height:50px;
+  right: 1%;
+  top: 40%;
+  overflow-y:scroll;
+
+}
+.cardName{
+  position: relative;
+  right: 40px;
+}
+.cardCost{
+  position: relative;
+  left: 20px;
+  bottom: 33px;
+}
+.cardQ{
+  position: relative;
+  left: 50px;
+  bottom: 60px;
+}
+.shopCard:hover{
+  height : 350px;
+}
+.mainMenu{
+  display: flex;
+  right: 20%;
+  left: 25%;
+  position: absolute;
+  top: 50%;
+  background-color: darkturquoise;
+  font-weight: 200;
+
+
+}
+
+
+
+.cardName{
+  font-style: italic;
+
+}
