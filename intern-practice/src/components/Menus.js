@@ -9,13 +9,13 @@ export
 class Menus extends Component{
     menu={
         pizza:
-            [{cost:55,name:'cheesy',quantity:0}],
+            [{cost:5,name:'cheesy',quantity:0}],
 
         meat:
             [{cost:20,name:'goose',quantity:0},{cost:24,name:'dog',quantity:0}],
 
         salad:
-            [{cost:546,name:'cesar',quantity:0},{cost:410,name:'sea salad',quantity:0},{cost:410,name:'qqq',quantity:0}],
+            [{cost:2,name:'cesar',quantity:0},{cost:4,name:'sea salad',quantity:0},{cost:10,name:'qqq',quantity:0}],
 
         hotMeal:
             [{cost:525,name:'soup',quantity:0},{cost:430,name:'noodles',quantity:0}],

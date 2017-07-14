@@ -46,36 +46,61 @@ body{
   color: black;
   font-size: 20px;
 }
+::-webkit-scrollbar{
+  width: 12px;
+}
+::-webkit-scrollbar-track:hover{
+  border-left: solid 1px #aaa;
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb{
+  border-width:1px 1px 1px 2px;
+  border-color: #777;
+  background-color: #aaa;
+}
+::-webkit-scrollbar-track{
+  border-width:0;
+}
 
 .shopCard{
-  display:inline;
+  display: inline-block;
   position: fixed;
   transition: 2s all;
 
+
   background-color: orange;
-  width: 204px;
-  height:50px;
+  width: 225px;
+  height:80px;
   right: 1%;
   top: 40%;
-  overflow-y:scroll;
+  overflow-y:auto;
+  overflow-x: auto;
+
+}
+.cardItem{
+  display: inline-block;
+  right:20px;
+}
+.shopCardHead{
+  border-style:groove ;
+  border-color: darkgoldenrod;
+  width: 204px;
+  height: 20px;
 
 }
 .cardName{
-  position: relative;
-  right: 40px;
+  display: inline-block;
+  padding-right: 15px;
 }
 .cardCost{
-  position: relative;
-  left: 20px;
-  bottom: 33px;
+  display: inline-block;
+  padding-right: 15px;
 }
 .cardQ{
-  position: relative;
-  left: 50px;
-  bottom: 60px;
+  display: inline-block;
 }
 .shopCard:hover{
-  height : 350px;
+  height : 150px;
 }
 .mainMenu{
   display: flex;

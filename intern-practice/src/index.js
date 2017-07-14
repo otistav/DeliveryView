@@ -4,10 +4,11 @@ import App from './containers/App'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import {setCardList} from './redusers/CardListReducer'
+import {applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import {composeWithDevTools} from 'redux-devtools-extension'
 
-
-
-const store = createStore(setCardList,[],  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(setCardList,[], composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
     <Provider store={store} ><App /></Provider>,
