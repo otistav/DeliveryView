@@ -8,7 +8,6 @@ class ShopCard extends Component{
 
 
     render(){
-        console.log(this.props.ItemsArray)
         return(
             <div className="shopCard">
                 <div>{this.props.ItemsArray.map((item)=>

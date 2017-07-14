@@ -10,8 +10,9 @@ class App extends Component{
     render(){
         return(
             <div>
+                {/*<h1>{this.props.ItemState.length}</h1>*/}
                 <LeftBar/>
-                <TopBar/>
+                {/*<TopBar/>*/}
                 <ShopCard ItemsArray={this.props.ItemState}/>
                 <div className="MyDiv">
                     {/*<input type="text" onChange={(e)=> this.item = e.target.value}/>*/}
