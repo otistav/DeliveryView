@@ -3,10 +3,9 @@
  */
 import React,{Component} from 'react'
 export
-class MainMenu extends Component{
-    render(){
+const MainMenu = (props)=>{
         return(
-            <div className="mainMenu">
+            <div className="main-menu">
                 Превосходная японская, русская или европейская кухня, масса любимых блюд, великолепный интерьер каждого
                 ресторана, квалифицированный персонал и высокий уровень сервиса – это основополагающие характеристики
                 наших ресторанов в Екатеринбурге и других городах. Все заведения рассредоточились в разных частях
@@ -20,5 +19,4 @@ class MainMenu extends Component{
                 десерты и напитки.
             </div>
         )
-    }
-}
+};

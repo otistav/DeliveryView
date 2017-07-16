@@ -6,16 +6,17 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Item} from '../components/Item'
+import axios from 'axios'
 
 class Menu extends Component{
     render(){
         // const q = this.props.ItemState.map(item =>{return item.itemQuantity.quantity});
-        const menuList=this.props.info;
         console.log("this is state",this.props.ItemState);
         // console.log('this is q', q);
         return(
             <div className="menu">
-                {menuList.map((info)=><Item ItemState={this.props.ItemState} onDeleteItem={this.props.onDeleteItem}
+                <button onClick={this.props.onGetItems}>j</button>
+                {this.props.info.map((info)=><Item ItemState={this.props.ItemState} onDeleteItem={this.props.onDeleteItem}
                                             onAdd={this.props.onAddItem} {...info}/>)}
             </div>
         )
@@ -38,17 +39,24 @@ export default connect(
         onGetItems: () => {
             const asyncGetItems = () => {
                 return dispatch => {
-                    setTimeout(() => {
-                        console.log('I got items');
-                        dispatch({ type: 'FETCH_TRACKS_SUCCESS', payload: [] });
-                    }, 2000)
-                }
+                    dispatch({type: 'FETCH_FOOD_START'});
+                    axios.get("https://api.punkapi.com/v2/beers")
+                        .then((response)=>{
+                            dispatch({type: "RECEIVE_FOOD", payload: response})
+                        })
+
+                //     setTimeout(() => {
+                //         console.log('I got items');
+                //         dispatch({ type: 'FETCH_TRACKS_SUCCESS', payload: [] });
+                //     }, 2000)
+
+                 }
             };
             dispatch(asyncGetItems());
         },
 
 
-
+    //http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3
     }),
 
 

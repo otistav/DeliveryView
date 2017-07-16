@@ -9,12 +9,11 @@ import {
     from 'react-router-dom'
 import {Menus} from './Menus'
 export
-class LeftBar extends Component{
-    render(){
+const Sidebar = (props)=>{
         return(
             <Router>
                 <div>
-                    <ul className='LeftMenu'>
+                    <ul className='left-menu'>
                         <Link className='active' to='/pizza'> Pizza<br/></Link>
                         <Link className='active' to='/meat'> Meat<br/></Link>
                         <Link className='active' to='/hotmeal'> HotMeal<br/></Link>
@@ -27,5 +26,4 @@ class LeftBar extends Component{
                 </div>
             </Router>
         )
-    }
-}
+};

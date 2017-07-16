@@ -1,7 +1,7 @@
 body{
   background-image: url('./images/food.jpg');
 }
-.Head{
+.header{
   color: white;
   position: fixed;
   top: 0%;
@@ -19,7 +19,7 @@ body{
 
 }
 
-.LeftMenu{
+.left-menu{
   position: fixed;
   top:20%;
   left:0%;
@@ -62,7 +62,7 @@ body{
   border-width:0;
 }
 
-.shopCard{
+.shop-card{
   display: inline-block;
   position: fixed;
   transition: 2s all;
@@ -77,32 +77,32 @@ body{
   overflow-x: auto;
 
 }
-.cardItem{
+.card-item{
   display: inline-block;
   right:20px;
 }
-.shopCardHead{
+.shop-card-head{
   border-style:groove ;
   border-color: darkgoldenrod;
   width: 204px;
   height: 20px;
 
 }
-.cardName{
+.card-name{
   display: inline-block;
   padding-right: 15px;
 }
-.cardCost{
+.card-cost{
   display: inline-block;
   padding-right: 15px;
 }
-.cardQ{
+.card-quantity{
   display: inline-block;
 }
-.shopCard:hover{
+.shop-card:hover{
   height : 150px;
 }
-.mainMenu{
+.main-menu{
   display: flex;
   right: 20%;
   left: 25%;
@@ -116,7 +116,7 @@ body{
 
 
 
-.cardName{
+.card-name{
   font-style: italic;
 
 }

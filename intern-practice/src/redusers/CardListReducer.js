@@ -26,8 +26,15 @@ export const setCardList = (state = [], action)=>{
                 ...state
             ]
         }break;
-        case 'HELL':{
+        case 'FETCH_FOOD_START':{
             return[
+                ...state
+            ]
+        }
+        case 'RECEIVE_FOOD':{
+            return[
+                ...state,
+                action
             ]
         }
         default:return state;break;

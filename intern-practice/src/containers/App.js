@@ -3,16 +3,16 @@ import React, {Component} from 'react'
 import '../index.css'
 import {connect} from 'react-redux'
 import {ShopCard} from '../components/ShopCard'
-import {TopBar} from '../components/TopBar'
-import {LeftBar} from '../components/LeftBar'
+import {Header} from '../components/Header'
+import {Sidebar} from '../components/Sidebar'
 
 class App extends Component{
     render(){
         return(
             <div>
                 {/*<h1>{this.props.ItemState.length}</h1>*/}
-                <LeftBar/>
-                {/*<TopBar/>*/}
+                <Sidebar/>
+                <Header/>
                 <ShopCard ItemsArray={this.props.ItemState}/>
                 <div className="MyDiv">
                     {/*<input type="text" onChange={(e)=> this.item = e.target.value}/>*/}

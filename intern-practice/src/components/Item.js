@@ -4,15 +4,21 @@
 import React,{Component} from 'react'
 export
 class  Item extends Component{
-    state = {
-        quantityOfMeal: 0,
-        isOnCard: false,
-        totalCost: 0
-    };
-    quantityOfMeal=0;
+    constructor(){
+        super();
+        this.state = {
+            quantityOfMeal: 0,
+            isOnCard: false,
+            totalCost: 0
+        };
+        this.quantityOfMeal=0;
 
-    q=0;
-    button = '';
+        this.q=0;
+        this.button = '';
+
+    }
+
+
     setDeleteButton = ()=>{
         if(this.state.quantityOfMeal>0)
             this.button = <button onClick={this.decQuantity}>-</button>;
@@ -82,7 +88,7 @@ class  Item extends Component{
                     {this.props.cost}
                 </div>
                 <br/>
-                <button className="submitButton" onClick={this.switchOrderStatus.bind(this)}>✓</button>
+                <button className="submit-button" onClick={this.switchOrderStatus.bind(this)}>✓</button>
                 <input onChange={this.setQuantityOfMeal} className="input" type="text"/>
                 {this.q}{this.button}
             </div>

@@ -3,9 +3,9 @@
  */
 import React from 'react'
 export
-const TopBar = (props)=>{
+const Header = (props)=>{
     return(
-        <div className="Head">
+        <div className="header">
             Доставка
         </div>
 
