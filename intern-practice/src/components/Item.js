@@ -18,13 +18,13 @@ class  Item extends Component{
 
     }
 
-
     setDeleteButton = ()=>{
         if(this.state.quantityOfMeal>0)
             this.button = <button onClick={this.decQuantity}>-</button>;
         else
             this.button = ''
     };
+
     decQuantity = ()=>{
         if(this.state.quantityOfMeal>0)
             this.setState({
@@ -38,7 +38,6 @@ class  Item extends Component{
 
     };
 
-
     setQValue = (array)=>{
         if(array.length>0) {
             for (let i = array.length - 1; i >= 0; i--) {
@@ -49,7 +48,8 @@ class  Item extends Component{
         }
         else
             return 0;
-      };
+    };
+
     switchOrderStatus = ()=>{
         if(this.quantityOfMeal>0) {
             this.setState({
@@ -61,6 +61,7 @@ class  Item extends Component{
                         }
             );
         }
+
     };
 
     setQuantityOfMeal= (e)=>{
@@ -74,7 +75,7 @@ class  Item extends Component{
     };
 
     render() {
-        console.log('this is quantity of meal',this.state.quantityOfMeal)
+        console.log('this is props of item',this.props);
         this.setDeleteButton();
         this.q=this.setQValue(this.props.ItemState);
         // console.log(this.q);
@@ -82,15 +83,17 @@ class  Item extends Component{
         // console.log("this is itemState",this.props.ItemState);
         // console.log(this.props.ItemState[0]);
         return (
-            <div>
-                <div style={{color: 'antiquewhite'}}>
-                    {this.props.name}
-                    {this.props.cost}
+            <div className='item'>
+                <div className="item-info" style={{color: 'antiquewhite'}}>
+                    <div className="item-name">{this.props.name}</div>
+
+                    <img src={this.props.img} style={{width:'50px',height:'175px'}}/>
                 </div>
                 <br/>
                 <button className="submit-button" onClick={this.switchOrderStatus.bind(this)}>✓</button>
                 <input onChange={this.setQuantityOfMeal} className="input" type="text"/>
                 {this.q}{this.button}
+                <div className="item-cost">Cost: {this.props.cost}</div>
             </div>
         )
     }

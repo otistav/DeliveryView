@@ -4,7 +4,6 @@ body{
 .header{
   color: white;
   position: fixed;
-  top: 0%;
   font-size: 300%;
   margin: 1%;
   background-image: url('./images/border.jpg');
@@ -22,18 +21,37 @@ body{
 .left-menu{
   position: fixed;
   top:20%;
-  left:0%;
-  background-color: antiquewhite ;
+  background-color: antiquewhite;
   padding:10px;
   margin: 5px;
 }
+.item{
+  border: solid;
+  border-width: 3px;
+}
+.items-size{
 
-.menu {
   position: absolute;
-  display: inline-block;
   top: 50%;
-  left: 30%;
-  background-image: url("./images/border.jpg");
+  length: 20px;
+  left: 15%;
+}
+.item-info{
+  length:100px;
+}
+.item-name{
+  position: relative;
+
+}
+.items {
+  /*top: 50%;*/
+  /*left: 15%;*/
+  position: relative;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+
+
+  background-color: burlywood;
 
 }
 .input[type="text"]{
@@ -78,7 +96,7 @@ body{
 
 }
 .card-item{
-  display: inline-block;
+  display: inline-flex;
   right:20px;
 }
 .shop-card-head{

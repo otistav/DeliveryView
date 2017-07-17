@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App'
-import {Provider} from 'react-redux'
-import {createStore} from 'redux'
-import {setCardList} from './redusers/CardListReducer'
-import {applyMiddleware} from 'redux'
-import thunk from 'redux-thunk'
-import {composeWithDevTools} from 'redux-devtools-extension'
+import App from './containers/App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { setCardList } from './redusers/itemList';
+import { applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import reducer from './redusers';
 
-const store = createStore(setCardList,[], composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(reducer, {}, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
-    <Provider store={store} ><App /></Provider>,
-    document.getElementById('root')
+  <Provider store={store} ><App /></Provider>,
+    document.getElementById('root'),
 );
