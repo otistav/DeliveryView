@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/ShopCard.css';
 
 export
 class ShopCard extends Component {

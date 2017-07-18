@@ -1,11 +1,12 @@
 
 import React, { Component } from 'react';
 import '../index.css';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { ShopCard } from '../components/ShopCard';
 import { Header } from '../components/Header';
-import { Sidebar } from '../components/Sidebar';
-import axios from 'axios';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends Component {
 
@@ -16,20 +17,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        {/* <h1>{this.props.ItemState.length}</h1>*/}
-        <Sidebar foodState={this.props.foodState} />
-        {/* <Header/>*/}
-        {/* <div className="beer">*/}
-        {/* {this.props.foodState.map(item => {return item.map(item =><div>{item.name}</div>)})}*/}
-        {/* </div>*/}
-        <ShopCard ItemsArray={this.props.ItemState} />
-        <div className="MyDiv">
-          {/* <input type="text" onChange={(e)=> this.item = e.target.value}/>*/}
-          {/* <button onClick={()=>this.props.onAddItem(this.item)}>push</button>*/}
-          {/* {this.props.testStore.map(item =><div>{item}</div>)}*/}
+        <div>
+          {/* <h1>{this.props.ItemState.length}</h1>*/}
+          <Header foodState={this.props.foodState} />
+          <ShopCard ItemsArray={this.props.ItemState} />
+
         </div>
-      </div>
     );
   }
 }
@@ -64,10 +57,6 @@ export default connect(
             dispatch({ type: 'FETCH_BEER_START' });
             axios.get('https://api.punkapi.com/v2/beers')
                             .then((response) => {
-                                // let i = -1;
-                                // let beerCostArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
-                                // response.data= response.data.map(item =>{i++; return {name:item.name, description:item.tagline,
-                                //     img:item.image_url, state: false,cost:beerCostArray[i]}});
                               response.data = transformBeerList(response);
                               dispatch({ type: 'RECEIVE_BEER', payload: response.data });
                             });

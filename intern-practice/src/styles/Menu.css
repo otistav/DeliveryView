@@ -1,0 +1,16 @@
+
+
+.items {
+    /*top: 50%;*/
+    /*left: 15%;*/
+    top: 20%;
+    length: 20px;
+    left: 15%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+
+
+    background-color: burlywood;
+
+}

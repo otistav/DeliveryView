@@ -26,22 +26,20 @@ class Menus extends Component {
                     { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
                     { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
                     { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
+        { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
+        { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
                     { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 }],
     };
   }
 
 
   render() {
-    console.log('this is props of foodstate', this.props);
-    console.log('this is menu.', this.menu.salad);
-    console.log('this is props of foodstate', this.props.foodState[0]);
-
     return (
       <div>
-        {/* <Route exact path="/pizza" render={()=><Menu info={this.menu.pizza}/>}/>*/}
-        {/* <Route path="/meat" render={()=><Menu info={this.menu.meat}/>}/>*/}
-        {/* <Route path="/hotmeal" render={()=><Menu info={this.menu.hotMeal}/>}/>*/}
-        {/* <Route path="/salad" render={()=><Menu info={this.menu.salad}/>}/>*/}
+        <Route exact path="/pizza" render={() => <Menu info={this.menu.pizza} />} />
+        <Route path="/meat" render={() => <Menu info={this.menu.meat} />} />
+        <Route path="/hotmeal" render={() => <Menu info={this.menu.hotMeal} />} />
+        <Route path="/salad" render={() => <Menu info={this.menu.salad} />} />
         <Route path="/beer" render={() => <Menu info={this.props.foodState} />} />
         <Route exact path="/" component={MainMenu} />
       </div>

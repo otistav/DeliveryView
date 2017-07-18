@@ -2,6 +2,7 @@
  * Created by sam on 13.07.17.
  */
 import React, { Component } from 'react';
+import '../styles/MainMenu.css';
 
 export
 const MainMenu = props => (

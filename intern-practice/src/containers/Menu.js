@@ -6,17 +6,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Item } from '../components/Item';
-import axios from 'axios';
+import '../styles/Menu.css'
 
 class Menu extends Component {
   render() {
         // const q = this.props.ItemState.map(item =>{return item.itemQuantity.quantity});
         // console.log('this is q', q);
     return (
-      <div className="items-size">
-        <button onClick={this.props.onGetItems}>j</button>
         <div className="items">
-
           {this.props.info.map(info => (<Item
             ItemState={this.props.ItemState}
             onDeleteItem={this.props.onDeleteItem}
@@ -24,7 +21,6 @@ class Menu extends Component {
             {...info}
           />))}
         </div>
-      </div>
     );
   }
 }
@@ -33,7 +29,6 @@ export default connect(
     state => ({
       ItemState: state.itemList,
       foodState: state.beer,
-
     }),
     dispatch => ({
       onAddItem: (name, cost, quantity, mystate) => {

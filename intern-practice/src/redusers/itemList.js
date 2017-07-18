@@ -2,7 +2,9 @@ export default
 function itemList(state = [], action) {
   switch (action.type) {
     case 'ADD_ITEM': {
-      if (action.item.itemState) { state = state.filter(item => item.itemName !== action.item.itemName); }
+      if (action.item.itemState) {
+        state = state.filter(item => item.itemName !== action.item.itemName);
+      }
       return [
         ...state,
         action.item,
