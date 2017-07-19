@@ -5,42 +5,23 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Menu from '../containers/Menu';
 import { MainMenu } from './MainMenu';
+import {
+  BrowserRouter as Router,
+}
+  from 'react-router-dom';
 
 export
 class Menus extends Component {
-  constructor() {
-    super();
-    this.menu = {
-      pizza:
-                [{ cost: 5, name: 'cheesy', quantity: 0 }],
-
-      meat:
-                [{ cost: 20, name: 'goose', quantity: 0 }, { cost: 24, name: 'dog', quantity: 0 }],
-
-      salad:
-                [{ cost: 2, name: 'cesar', quantity: 0 }, { cost: 4, name: 'sea salad', quantity: 0 }, { cost: 10, name: 'qqq', quantity: 0 }],
-
-      hotMeal:
-      [{ cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 }, { cost: 525, name: 'soup', quantity: 0 },
-                    { cost: 430, name: 'noodles', quantity: 0 }, { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
-                    { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
-                    { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
-                    { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
-        { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
-        { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 },
-                    { cost: 525, name: 'soup', quantity: 0 }, { cost: 430, name: 'noodles', quantity: 0 }],
-    };
-  }
 
 
   render() {
     return (
       <div>
-        <Route exact path="/pizza" render={() => <Menu info={this.menu.pizza} />} />
-        <Route path="/meat" render={() => <Menu info={this.menu.meat} />} />
-        <Route path="/hotmeal" render={() => <Menu info={this.menu.hotMeal} />} />
-        <Route path="/salad" render={() => <Menu info={this.menu.salad} />} />
-        <Route path="/beer" render={() => <Menu info={this.props.foodState} />} />
+        <Route exact path="/pizza" render={() => <Menu type="pizza" />} />
+        <Route exact path="/meat" render={() => <Menu type="meat" />} />
+        <Route exact path="/hotmeal" render={() => <Menu type="hotMeal" />} />
+        <Route exact path="/salad" render={() => <Menu type="salad" />} />
+        <Route exact path="/beer" render={() => <Menu info={this.props.foodState} />} />
         <Route exact path="/" component={MainMenu} />
       </div>
 

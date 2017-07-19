@@ -6,29 +6,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Item } from '../components/Item';
-import '../styles/Menu.css'
+import '../styles/Menu.css';
 
 class Menu extends Component {
+  constructor() {
+    super();
+    this.menu = [];
+  }
+
+  setMenu(obj) {
+    for (const key in obj) {
+      if (String(key) === this.props.type) { return obj[key]; }
+    }
+    return this.props.foodState
+  }
+
   render() {
-        // const q = this.props.ItemState.map(item =>{return item.itemQuantity.quantity});
-        // console.log('this is q', q);
+    this.menu = this.setMenu(this.props.menu);
+
     return (
-        <div className="items">
-          {this.props.info.map(info => (<Item
-            ItemState={this.props.ItemState}
-            onDeleteItem={this.props.onDeleteItem}
-            onAdd={this.props.onAddItem}
-            {...info}
-          />))}
-        </div>
+      <div className="items">
+        {this.menu.map(info => (<Item
+          itemState={this.props.itemsInCard}
+          onDeleteItem={this.props.onDeleteItem}
+          onAdd={this.props.onAddItem}
+          {...info}
+        />))}
+      </div>
     );
   }
 }
 
 export default connect(
     state => ({
-      ItemState: state.itemList,
+      itemsInCard: state.cardItemList,
       foodState: state.beer,
+      menu: state.menu,
     }),
     dispatch => ({
       onAddItem: (name, cost, quantity, mystate) => {

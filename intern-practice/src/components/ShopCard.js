@@ -10,12 +10,13 @@ class ShopCard extends Component {
 
 
   render() {
-    const myArray = this.props.ItemsArray.map(item => item.itemQuantity * item.itemCost);
+    console.log("this is props of shop card",this.props.itemsArray)
+    const myArray = this.props.itemsArray.map(item => item.itemQuantity * item.itemCost);
     this.totalCost = myArray.reduce((sum, current) => sum + current, 0);
     return (
       <div className="shop-card">
         <div className="shop-card-header">Shop Card</div>
-        <div>{this.props.ItemsArray.map(item =>
+        <div>{this.props.itemsArray.map(item =>
           (<div>
             <div className="card-items">
               <li className="card-name">{item.itemName}:</li>

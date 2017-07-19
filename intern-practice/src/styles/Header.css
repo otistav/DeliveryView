@@ -1,42 +1,38 @@
+
 .active{
     font-weight: bold;
-    font-size: 25px;
-    color: black;
-    padding-left:5px;
+    font-size: 20px;
+    color: #ED7B54;
+    padding-left:40px;
     text-decoration: none;
-
+    display: inline-block;
 }
-.header-image{
-    position: fixed;
-    width: 130px;
+.header-image {
+    width: 150px;
     /*right:550px;*/
     /*bottom: 35px;*/
-    left:10px;
-    top:10px;
+    padding-top: 10px;
+}
 
+.menu-links{
+    border-top:solid 1px #FFFFFF;
 
-
-    /*left: 20%;*/
+}
+.info-links{
+    font-weight:bold;
+    font-size:30px;
+    color: darkmagenta;
 }
 .header-content{
-    position: relative;
+    height:80px;
 }
-.header-links{
-    display:inline-flex;
-    position: fixed;
-    background-color: antiquewhite;
-    left:450px;
-    top:70px;
-    border-top:2px solid;
-    padding:6px;
-    width:100%;
-}
+
 .header{
     width:100%;
     position: fixed;
-    display:inline-flex;
-    background-color: antiquewhite;
-    padding:40px 50%;
+    background-color: #F5F5F5;
+    height: 80px;
+
 
 
     /*margin: 5px;*/
@@ -48,4 +44,61 @@
     /*border: 30px ridge;*/
     /*padding-left: 40%;*/
     /*padding-right: 40%;*/
+}
+@media screen and (max-width: 1197px){
+    .header{
+        width:100%;
+        position: absolute;
+        background-color: #F5F5F5;
+        height: 185px;
+    }
+    .header-image{
+        width: 150px;
+        /*right:550px;*/
+        /*bottom: 35px;*/
+        padding-top: 10px;
+        margin-left:300px;
+
+    }
+    .links{
+        margin-left:220px;
+    }
+    .active{
+        font-weight: bold;
+        font-size: 30px;
+        color: #ED7B54;
+        padding-left:40px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+}
+@media screen and (max-width: 768px){
+    .header{
+        width:100%;
+        position: absolute;
+        background-color: #F5F5F5;
+        height: 185px;
+    }
+    .header-image{
+        width: 150px;
+        /*right:550px;*/
+        /*bottom: 35px;*/
+        padding-top: 10px;
+        margin-left:100px;
+
+    }
+    .links{
+        margin-left:220px;
+    }
+    .active{
+        font-weight: bold;
+        font-size: 25px;
+        color: #ED7B54;
+        padding-left:40px;
+        text-decoration: none;
+        display: block;
+    }
+
+
 }

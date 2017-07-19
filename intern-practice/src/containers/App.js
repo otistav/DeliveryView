@@ -6,6 +6,15 @@ import { connect } from 'react-redux';
 import { ShopCard } from '../components/ShopCard';
 import { Header } from '../components/Header';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../node_modules/bootstrap/dist/js/bootstrap.min';
+
+import { Menus } from '../components/Menus';
+import { MainMenu } from '../components/MainMenu';
+import {
+  BrowserRouter as Router,
+  Route,
+}
+  from 'react-router-dom';
 
 
 class App extends Component {
@@ -17,19 +26,22 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        {/* <h1>{this.props.ItemState.length}</h1>*/}
-        <Header foodState={this.props.foodState} />
-        <ShopCard ItemsArray={this.props.ItemState} />
+      <Router>
+        <div>
+          <Menus foodState={this.props.foodState} />
+          {/* <h1>{this.props.ItemState.length}</h1>*/}
+          <Header foodState={this.props.foodState} />
+          <ShopCard itemsArray={this.props.itemsInCard} />
 
-      </div>
+        </div>
+      </Router>
     );
   }
 }
 
 export default connect(
     state => ({
-      ItemState: state.itemList,
+      itemsInCard: state.cardItemList,
       foodState: state.beer,
     }),
   dispatch => ({
@@ -37,7 +49,6 @@ export default connect(
       const GetBeer = () => {
           // transformBeerList is a func which adds a costs of beer in props object
         const transformBeerList = (array) => {
-          console.log('this is beerlist', array);
           let i = -1;
           const beerCostArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
             15, 16, 17, 18, 19, 20, 21, 22, 23, 24];

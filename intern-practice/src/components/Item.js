@@ -76,13 +76,8 @@ class  Item extends Component{
     };
 
     render() {
-        console.log('this is props of item',this.props);
         this.setDeleteButton();
-        this.q=this.setQValue(this.props.ItemState);
-        // console.log(this.q);
-
-        // console.log("this is itemState",this.props.ItemState);
-        // console.log(this.props.ItemState[0]);
+        this.q=this.setQValue(this.props.itemState);
         return (
             <div className='item'>
                 <div className="item-info" style={{color: 'antiquewhite'}}>

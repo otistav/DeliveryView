@@ -1,5 +1,5 @@
 export default
-function itemList(state = [], action) {
+function cardItemList(state = [], action) {
   switch (action.type) {
     case 'ADD_ITEM': {
       if (action.item.itemState) {
