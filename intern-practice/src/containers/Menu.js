@@ -18,14 +18,14 @@ class Menu extends Component {
     for (const key in obj) {
       if (String(key) === this.props.type) { return obj[key]; }
     }
-    return this.props.foodState
+    return this.props.foodState;
   }
 
   render() {
     this.menu = this.setMenu(this.props.menu);
 
     return (
-      <div className="items">
+      <div className="food-menu col-xs-8 col-sm-offset-2 col-xs-offset-2 col-md-offset-1">
         {this.menu.map(info => (<Item
           itemState={this.props.itemsInCard}
           onDeleteItem={this.props.onDeleteItem}

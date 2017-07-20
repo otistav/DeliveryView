@@ -1,20 +1,57 @@
-.input[type="text"]{
-    border: 2px solid #cccccc;
-    border-radius: 3px;
-    background: #ffffff !important;
-    outline: none;
-    height: 24px;
-    width: 24px;
-    color: black;
-    font-size: 20px;
+.item{
+    margin-bottom:20px;
 }
+
 .item-info{
-    length:100px;
+    background-color: #F6F6F6;
 }
+
+.item-cost{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.submit-button{
+    border: none;
+    background-color: #EB6E44;
+    color: white;
+    font-size: 25px;
+    margin:10px;
+}
+
 .item-name{
-    position: relative;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: darkorange;
+}
+
+.item-image-block{
+    padding: 30px;
+    background-color: #eeeeee;
 
 }
-.item{
-    border: 3px solid;
+
+.item-image{
+    width:220px;
+    height:180px;
 }
+
+@media screen and (max-width: 1200px){
+    .item-image-block{
+        padding: 8px
+    }
+}
+
+@media screen and (max-width: 992px){
+    .item-image-block{
+        padding: 10px;
+    }
+}
+
+/*@media screen and (max-width: 768px){*/
+    /*.item-image-block{*/
+    /*}*/
+/*}*/
+

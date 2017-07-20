@@ -31,7 +31,11 @@ class App extends Component {
           <Menus foodState={this.props.foodState} />
           {/* <h1>{this.props.ItemState.length}</h1>*/}
           <Header foodState={this.props.foodState} />
-          <ShopCard itemsArray={this.props.itemsInCard} />
+          <ShopCard
+            onAddItem={this.props.onAddItem}
+            itemsArray={this.props.itemsInCard}
+            onDeleteItem={this.props.onDeleteItem}
+          />
 
         </div>
       </Router>
@@ -81,6 +85,32 @@ export default connect(
         };
       };
       dispatch(GetBeer());
+    },
+    onAddItem: (name, cost, quantity, mystate) => {
+      if (quantity > 0) {
+        dispatch({
+          type: 'ADD_ITEM',
+          item: {
+            itemName: name,
+            itemQuantity: quantity,
+            itemCost: cost,
+            itemState: mystate,
+          },
+        });
+      } else {
+        dispatch({
+          type: 'ADD_ITEM',
+          item: {
+            itemName: name,
+            itemQuantity: 1,
+            itemCost: cost,
+            itemState: mystate,
+          },
+        });
+      }
+    },
+    onDeleteItem: (name) => {
+      dispatch({ type: 'DELETE_ITEM', itemName: name });
     },
   }),
 
