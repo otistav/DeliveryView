@@ -11,7 +11,12 @@ export
 const Header = props => (
   <div className="header">
     <div className="container header-content">
-      <div className="col-lg-3 col-md-10 col-sm-10 col-xs-12">
+      <div className="col-lg-3 col-md-8 col-sm-12 col-xs-9
+       col-xs-offset-3
+       col-sm-offset-3
+       col-md-offset-2
+       col-lg-offset-0"
+      >
         <div className="row">
           <NavLink to="/"> <img
             className="header-image"
@@ -20,8 +25,45 @@ const Header = props => (
           /><br /></NavLink>
         </div>
       </div>
-      <div className="col-lg-9 col-md-10 col-sm-10 col-xs-12 links">
-        <div className="info-links">44</div>
+      <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-sm-offset-2 col-lg-offset-0 links">
+        <div className="info-links">
+          <NavLink
+            className="info-link"
+            activeStyle={{
+              textDecoration: 'none',
+              color: '#7C7C7C',
+              fontWeighteight: 'bold',
+              fontSize: '20px',
+              display: 'inline-block',
+              paddingLeft: '10px',
+            }}
+            to="/info"
+          > About us<br /></NavLink>
+          <NavLink
+            className="info-link"
+            activeStyle={{
+              textDecoration: 'none',
+              fontWeighteight: 'bold',
+              fontSize: '20px',
+              color: '#7C7C7C',
+              display: 'inline-block',
+              paddingLeft: '10px',
+            }}
+            to="/info00"
+          > Delivery<br /></NavLink>
+          <NavLink
+            className="info-link"
+            activeStyle={{
+              textDecoration: 'none',
+              fontWeighteight: 'bold',
+              fontSize: '20px',
+              color: '#7C7C7C',
+              display: 'inline-block',
+              paddingLeft: '10px',
+            }}
+            to="/info0"
+          > Contacts<br /></NavLink>
+        </div>
         <div className="row menu-links hidden-xs">
           <NavLink
             className="active"
@@ -69,9 +111,9 @@ const Header = props => (
             to="/beer"
           > Beer<br /></NavLink>
         </div>
-        <div className="dropdown  col-ms-12 hidden-md hidden-lg hidden-sm">
+        <div className="dropdown  col-xs-6 hidden-md hidden-lg hidden-sm">
           <button
-            className="btn  btn-primary dropdown-toggle"
+            className="dropdown-button dropdown-toggle"
             type="button"
             data-toggle="dropdown"
           >Menu
