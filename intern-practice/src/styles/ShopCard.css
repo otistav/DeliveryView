@@ -1,55 +1,61 @@
 
-::-webkit-scrollbar{
-    width: 12px;
-}
-::-webkit-scrollbar-track:hover{
-    border-left: solid 1px #aaa;
-    background-color: #eee;
-}
-::-webkit-scrollbar-thumb{
-    border-width:1px 1px 1px 2px;
-    border-color: #777;
-    background-color: #aaa;
-}
-::-webkit-scrollbar-track{
-    border-width:0;
+/*::-webkit-scrollbar{*/
+    /*width: 12px;*/
+/*}*/
+/*::-webkit-scrollbar-track:hover{*/
+    /*border-left: solid 1px #aaa;*/
+    /*background-color: #eee;*/
+/*}*/
+/*::-webkit-scrollbar-thumb{*/
+    /*border-width:1px 1px 1px 2px;*/
+    /*border-color: #777;*/
+    /*background-color: #aaa;*/
+/*}*/
+/*::-webkit-scrollbar-track{*/
+    /*border-width:0;*/
+/*}*/
+
+
+.card-item-image{
+    margin: 5px 20px 5px 5px;
 }
 
-.shop-card{
-    display: inline-block;
-    position: fixed;
-    transition: 2s all;
-    background-color: orange;
-    width: 225px;
-    height:80px;
-    right: 1%;
-    top: 40%;
-    overflow-y:auto;
-    overflow-x: auto;
-
-}
-.card-item{
-    display: inline-flex;
-    right:20px;
-}
-.shop-card-header{
-    border-style:groove ;
-    border-color: darkgoldenrod;
-    width: 219px;
-    height: 20px;
-
-}
-.card-name{
-    display: inline-block;
-    padding-right: 15px;
+input[type="text"] {
+    width: 30px;
+    height:25px;
 }
 .card-cost{
-    display: inline-block;
-    padding-right: 15px;
+    margin-top:5px;
+    font-size: 90%;
+    position: absolute;
+    left:230px;
 }
-.card-quantity{
-    display: inline-block;
+.card-name{
+    margin-right: 20px;
+    margin-top: 5px;
+    max-width: 90px;
 }
-.shop-card:hover{
-    height : 150px;
+.card-link{
+    color: #ED7B54;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.card-item{
+    display: inline-flex;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.shop-card-button{
+    margin-left: -25px;
+    border-bottom-left-radius: 45%;
+    border-top-left-radius: 45%;
+    border: none;
+    font-size: 161%;
+    font-weight: bolder;
+    background: url('https://www.detaluga.ru/img/basket-button.png');
+}
+.button-pusher{
+    position: absolute;
+    top:45%;
 }

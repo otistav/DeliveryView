@@ -45,7 +45,8 @@ class  Item extends Component{
                     isOnCard: true,
                 },
                     () => {
-                    this.props.onAdd(this.props.name, this.props.cost, this.state.quantityOfMeal,this.state.isOnCard)
+                    this.props.onAdd(this.props.name, this.props.cost,
+                                    this.state.quantityOfMeal,this.state.isOnCard, this.props.img)
                         }
             );
 
@@ -53,7 +54,6 @@ class  Item extends Component{
 
 
     render() {
-      console.log('this is item props',this.props.itemState);
         this.q=this.setQValue(this.props.itemState);
         return (
             <div className='container'>

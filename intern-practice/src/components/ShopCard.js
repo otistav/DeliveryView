@@ -1,52 +1,57 @@
 import React, { Component } from 'react';
 import '../styles/ShopCard.css';
+import cardItemList from "../redusers/cardItemList";
+import {ShopCardItems} from "../components/ShopCardItems"
 
 export
 class ShopCard extends Component {
   constructor() {
     super();
     this.totalCost = 0;
+    this.state = {
+        isClosed: true
+    }
+    // noinspection JSAnnotator
+
+
     // this.setQuantityOfMeal = this.setQuantityOfMeal.bind(this);
   }
 
-  setQuantityOfMeal = (name,value)=>{
-    console.log("value",value);
-      for (let i = this.props.itemsArray.length - 1; i >= 0; i--) {
-        console.log("this is itemsarray", this.props.itemsArray);
+  changeShopCardSize = ()=>{
 
-        if (this.props.itemsArray[i].itemName === name) {
-          this.props.onAddItem(this.props.itemsArray[i].itemName, this.props.itemsArray[i].itemCost,
-            value, this.props.itemsArray[i].itemState)
-        }
-      }
+      this.setState({
+          isClosed: !this.state.isClosed
+      })
   };
 
+
   render() {
-    console.log('this is props of shop card', this.props.itemsArray);
-    const myArray = this.props.itemsArray.map(item => item.itemQuantity * item.itemCost);
-    this.totalCost = myArray.reduce((sum, current) => sum + current, 0);
+    const cardStyle = {
+        position: 'fixed',
+        right:0,
+        width:(this.state.isClosed) ? '0px' : '400px',
+        height:'100%',
+        backgroundColor: '#BEBEBE',
+        transitionProperty: 'width',
+        transitionDuration: '1s'
+    };
+
+
+
     return (
-      <div className="shop-card">
-        <div className="shop-card-header">Shop Card</div>
-        <div>{this.props.itemsArray.map(item =>
-          (<div>
-            <div className="card-items">
-              <li className="card-name">Name:{item.itemName},</li>
-              {/* <li className="card-quantity">Q:{item.itemQuantity}, </li>*/}
-              Q:<input type="text"
-                       onChange={(e)=>this.setQuantityOfMeal(item.itemName,e.target.value)}
-                       style={{ width: '10%' }}
-                       value={item.itemQuantity}
-              />
-              <li className="card-cost">Cost:{item.itemCost}</li>
+        <div className="card hidden-xs" style={cardStyle}>
+            <div className="button-pusher">
+                <button className="shop-card-button" onClick={this.changeShopCardSize} >{this.props.itemsArray.length}</button>
+                <ShopCardItems
+                    onAddItem={this.props.onAddItem}
+                    itemsArray={this.props.itemsArray}
+                    onDeleteItem={this.props.onDeleteItem}
+                />
             </div>
-          </div>))}
-        </div>
-        <div>
-                    total Cost: {this.totalCost}
+
+
         </div>
 
-      </div>
     );
   }
 }

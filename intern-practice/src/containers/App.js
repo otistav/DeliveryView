@@ -30,7 +30,12 @@ class App extends Component {
         <div>
           <Menus foodState={this.props.foodState} />
           {/* <h1>{this.props.ItemState.length}</h1>*/}
-          <Header foodState={this.props.foodState} />
+          <Header
+            foodState={this.props.foodState}
+            itemsArray={this.props.itemsInCard}
+            onAddItem={this.props.onAddItem}
+            onDeleteItem={this.props.onDeleteItem}
+          />
           <ShopCard
             onAddItem={this.props.onAddItem}
             itemsArray={this.props.itemsInCard}

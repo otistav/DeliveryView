@@ -44,12 +44,14 @@ export default connect(
       menu: state.menu,
     }),
     dispatch => ({
-      onAddItem: (name, cost, quantity, mystate) => {
+      onAddItem: (name, cost, quantity, mystate, img) => {
         dispatch({ type: 'ADD_ITEM',
           item: { itemName: name,
             itemQuantity: quantity,
             itemCost: cost,
-            itemState: mystate } });
+            itemState: mystate,
+            itemImg: img },
+        });
       },
       onDeleteItem: (name) => {
         dispatch({ type: 'DELETE_ITEM', itemName: name });
