@@ -1,54 +1,52 @@
 import React, { Component } from 'react';
 import '../styles/ShopCard.css';
-import cardItemList from "../redusers/cardItemList";
-import {ShopCardItems} from "../components/ShopCardItems"
+import ShopCardItems from '../components/ShopCardItems';
 
-export
+export default
 class ShopCard extends Component {
-    constructor() {
-        super();
-        this.totalCost = 0;
-        this.state = {
-            isClosed: true
-        }
+  constructor() {
+    super();
+    this.totalCost = 0;
+    this.state = {
+      isClosed: true,
+    };
         // noinspection JSAnnotator
-    }
+  }
 
-    changeShopCardSize = ()=>{
-        this.setState({
-            isClosed: !this.state.isClosed
-        })
+  changeShopCardSize() {
+    this.setState({
+      isClosed: !this.state.isClosed,
+    });
+  }
+
+  render() {
+    const cardStyle = {
+      position: 'fixed',
+      right: 0,
+      width: (this.state.isClosed) ? '0px' : '400px',
+      height: '100%',
+      backgroundColor: '#BEBEBE',
+      transitionProperty: 'width',
+      transitionDuration: '1s',
     };
 
-    render() {
+    return (
+      <div className="card hidden-xs" style={cardStyle}>
 
-        const cardStyle = {
-            position: 'fixed',
-            right:0,
-            width:(this.state.isClosed) ? '0px' : '400px',
-            height:'100%',
-            backgroundColor: '#BEBEBE',
-            transitionProperty: 'width',
-            transitionDuration: '1s'
-        };
+        <div className="button-pusher">
+          <button className="shop-card-button" onClick={this.changeShopCardSize} >
+            {this.props.itemsArray.length}
+          </button>
+        </div>
 
-        return (
-            <div className="card hidden-xs" style={cardStyle}>
+        <ShopCardItems
+          onAddItem={this.props.onAddItem}
+          itemsArray={this.props.itemsArray}
+          onDeleteItem={this.props.onDeleteItem}
+        />
 
-                <div className="button-pusher">
-                    <button className="shop-card-button" onClick={this.changeShopCardSize} >
-                        {this.props.itemsArray.length}
-                    </button>
-                </div>
+      </div>
 
-                <ShopCardItems
-                    onAddItem={this.props.onAddItem}
-                    itemsArray={this.props.itemsArray}
-                    onDeleteItem={this.props.onDeleteItem}
-                />
-
-            </div>
-
-        );
-    }
+    );
+  }
 }

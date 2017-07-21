@@ -16,7 +16,9 @@ class Menu extends Component {
 
   setMenu(obj) {
     for (const key in obj) {
-      if (String(key) === this.props.type) { return obj[key]; }
+      if (String(key) === this.props.type) {
+        return obj[key];
+      }
     }
     return this.props.foodState;
   }
@@ -56,8 +58,5 @@ export default connect(
       onDeleteItem: (name) => {
         dispatch({ type: 'DELETE_ITEM', itemName: name });
       },
-    // http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3
     }),
-
-
 )(Menu);

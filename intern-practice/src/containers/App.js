@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 import '../index.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { ShopCard } from '../components/ShopCard';
+import ShopCard from '../components/ShopCard';
 import { Header } from '../components/Header';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min';
-
 import { Menus } from '../components/Menus';
 import {
   BrowserRouter as Router,
@@ -111,6 +110,5 @@ export default connect(
       dispatch({ type: 'DELETE_ITEM', itemName: name });
     },
   }),
-
 
 )(App);

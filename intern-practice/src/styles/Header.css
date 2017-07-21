@@ -9,8 +9,6 @@
 }
 .header-image {
     width: 150px;
-    /*right:550px;*/
-    /*bottom: 35px;*/
     padding-top: 10px;
 }
 
@@ -36,17 +34,6 @@
     background-color: #F5F5F5;
     height: 80px;
 
-
-
-    /*margin: 5px;*/
-    /*color: white;*/
-    /*position: fixed;*/
-    /*font-size: 300%;*/
-    /*margin: 1%;*/
-    /*background-image: url('../images/border.jpg');*/
-    /*border: 30px ridge;*/
-    /*padding-left: 40%;*/
-    /*padding-right: 40%;*/
 }
 @media screen and (max-width: 1199px){
     .header{

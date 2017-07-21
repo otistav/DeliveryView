@@ -5,7 +5,7 @@ import {
 }
     from 'react-router-dom';
 import '../styles/Header.css';
-import { ShopCardItems } from '../components/ShopCardItems';
+import ShopCardItems from '../components/ShopCardItems';
 
 export
 class Header extends Component {
@@ -26,12 +26,14 @@ class Header extends Component {
                 alt="hello"
               /><br /></NavLink>
             </div>
+
           </div>
 
 
           <div className="col-lg-9 col-md-9 col-sm-9
                         col-xs-12 col-sm-offset-2 col-lg-offset-0 links"
           >
+
             <div className="info-links">
               <NavLink
                 className="info-link"
@@ -73,6 +75,7 @@ class Header extends Component {
               > Contacts<br />
               </NavLink>
             </div>
+
             <div className="row menu-links hidden-xs">
               <NavLink
                 className="active"

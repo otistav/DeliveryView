@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/ShopCard.css';
 
-export
+export default
 class ShopCardItems extends Component {
   constructor() {
     super();
@@ -39,10 +39,12 @@ class ShopCardItems extends Component {
 
 
     const Header = this.setCardHeader();
+
     return (
       <div>
         {Header}
         <div className="card-items">
+
           {this.props.itemsArray.map(item => (
             <div>
               <div className="card-item">
@@ -54,10 +56,8 @@ class ShopCardItems extends Component {
                     {item.itemName}
                   </a>
                 </div>
-                {/* <li className="card-quantity">Q:{item.itemQuantity}, </li>*/}
                 <input
                   type="text"
-
                   onChange={e => this.setQuantityOfMeal(item.itemName, e.target.value)}
                   style={{ marginRight: '20px',
                     position: 'absolute',
@@ -68,14 +68,17 @@ class ShopCardItems extends Component {
                 />
                 <div className="card-cost">
                   {item.itemCost} USD
-                                    </div>
+                </div>
                 <button style={{ position: 'absolute', left: '300px' }} onClick={() => { this.props.onDeleteItem(item.itemName); }}>x</button>
               </div>
             </div>))}
         </div>
+
+
         <div style={{ fontSize: '130%', color: '#ED7B54', borderTop: '2px solid white' }}>
-                    total Cost: {this.totalCost}
+            total Cost: {this.totalCost}
         </div>
+
       </div>
     );
   }

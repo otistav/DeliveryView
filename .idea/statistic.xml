@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Statistic">
+    <option name="fileTypes" value="" />
+    <option name="separateTabsFileTypes" value="css;html;js;" />
+    <option name="excludeDotArtifactDirectory" value="true" />
+    <option name="excludedDirectories">
+      <list>
+        <option value="$PROJECT_DIR$/intern-practice/src/actions" />
+        <option value="$PROJECT_DIR$/intern-practice/src/components" />
+        <option value="$PROJECT_DIR$/intern-practice/src/containers" />
+        <option value="$PROJECT_DIR$/intern-practice/src/images" />
+        <option value="$PROJECT_DIR$/intern-practice/src/redusers" />
+        <option value="$PROJECT_DIR$/intern-practice/src/styles" />
+      </list>
+    </option>
+  </component>
+</project>

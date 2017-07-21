@@ -9,7 +9,7 @@ function cardItemList(state = [], action) {
         ...state,
         action.item,
       ];
-    } break;
+    }
     case 'DELETE_ITEM': {
       for (let i = state.length - 1; i >= 0; i--) {
         if (state[i].itemName === action.itemName) {
@@ -19,8 +19,8 @@ function cardItemList(state = [], action) {
       return [
         ...state,
       ];
-    } break;
+    }
 
-    default:return state; break;
+    default:return state;
   }
 }
