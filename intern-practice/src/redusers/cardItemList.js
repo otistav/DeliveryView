@@ -12,10 +12,9 @@ function cardItemList(state = [], action) {
     } break;
     case 'DELETE_ITEM': {
       for (let i = state.length - 1; i >= 0; i--) {
-        if (state[i].itemName === action.itemName && state[i].itemQuantity > 0) {
-          state[i].itemQuantity--;
+        if (state[i].itemName === action.itemName) {
+          state.splice(i, 1);
         }
-        if (state[i].itemQuantity === 0) { state.splice(i, 1); }
       }
       return [
         ...state,

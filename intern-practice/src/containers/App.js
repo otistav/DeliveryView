@@ -9,10 +9,8 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min';
 
 import { Menus } from '../components/Menus';
-import { MainMenu } from '../components/MainMenu';
 import {
   BrowserRouter as Router,
-  Route,
 }
   from 'react-router-dom';
 
@@ -29,7 +27,6 @@ class App extends Component {
       <Router>
         <div>
           <Menus foodState={this.props.foodState} />
-          {/* <h1>{this.props.ItemState.length}</h1>*/}
           <Header
             foodState={this.props.foodState}
             itemsArray={this.props.itemsInCard}
@@ -56,7 +53,7 @@ export default connect(
   dispatch => ({
     onGetItems: () => {
       const GetBeer = () => {
-          // transformBeerList is a func which adds a costs of beer in props object
+                  // transformBeerList is a func which adds a costs of beer in props object
         const transformBeerList = (array) => {
           let i = -1;
           const beerCostArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
@@ -77,21 +74,15 @@ export default connect(
         return (dispatch) => {
           dispatch({ type: 'FETCH_BEER_START' });
           axios.get('https://api.punkapi.com/v2/beers')
-              .then((response) => {
-                response.data = transformBeerList(response);
-                dispatch({ type: 'RECEIVE_BEER', payload: response.data });
-              });
-
-
-            //     setTimeout(() => {
-            //         console.log('I got items');
-            //         dispatch({ type: 'FETCH_TRACKS_SUCCESS', payload: [] });
-            //     }, 2000)
+                          .then((response) => {
+                            response.data = transformBeerList(response);
+                            dispatch({ type: 'RECEIVE_BEER', payload: response.data });
+                          });
         };
       };
       dispatch(GetBeer());
     },
-    onAddItem: (name, cost, quantity, mystate) => {
+    onAddItem: (name, cost, quantity, mystate, img) => {
       if (quantity > 0) {
         dispatch({
           type: 'ADD_ITEM',
@@ -100,6 +91,7 @@ export default connect(
             itemQuantity: quantity,
             itemCost: cost,
             itemState: mystate,
+            itemImg: img,
           },
         });
       } else {
@@ -110,6 +102,7 @@ export default connect(
             itemQuantity: 1,
             itemCost: cost,
             itemState: mystate,
+            itemImg: img,
           },
         });
       }
