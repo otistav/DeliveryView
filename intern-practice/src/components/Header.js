@@ -5,7 +5,7 @@ import {
 }
     from 'react-router-dom';
 import '../styles/Header.css';
-import ShopCardItems from '../components/ShopCardItems';
+import ShopCart from './ShopCart';
 
 export
 class Header extends Component {
@@ -204,7 +204,7 @@ class Header extends Component {
                 >Shop Card
                           <span className="caret" /></button>
                 <ul className="dropdown-menu" role="menu">
-                  <ShopCardItems
+                  <ShopCart
                     onAddItem={this.props.onAddItem}
                     itemsArray={this.props.itemsArray}
                     onDeleteItem={this.props.onDeleteItem}

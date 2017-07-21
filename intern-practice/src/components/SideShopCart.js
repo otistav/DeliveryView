@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../styles/ShopCard.css';
-import ShopCardItems from '../components/ShopCardItems';
+import ShopCart from './ShopCart';
 
 export default
-class ShopCard extends Component {
+class SideShopCart extends Component {
   constructor() {
     super();
     this.totalCost = 0;
@@ -39,7 +39,7 @@ class ShopCard extends Component {
           </button>
         </div>
 
-        <ShopCardItems
+        <ShopCart
           onAddItem={this.props.onAddItem}
           itemsArray={this.props.itemsArray}
           onDeleteItem={this.props.onDeleteItem}

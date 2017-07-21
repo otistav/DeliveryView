@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import '../index.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import ShopCard from '../components/ShopCard';
+import SideShopCart from '../components/SideShopCart';
 import { Header } from '../components/Header';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min';
-import { Menus } from '../components/Menus';
+import { MenuRoutes } from '../components/MenuRoutes';
 import {
   BrowserRouter as Router,
 }
@@ -25,14 +25,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Menus foodState={this.props.foodState} />
+          <MenuRoutes foodState={this.props.foodState} />
           <Header
             foodState={this.props.foodState}
             itemsArray={this.props.itemsInCard}
             onAddItem={this.props.onAddItem}
             onDeleteItem={this.props.onDeleteItem}
           />
-          <ShopCard
+          <SideShopCart
             onAddItem={this.props.onAddItem}
             itemsArray={this.props.itemsInCard}
             onDeleteItem={this.props.onDeleteItem}

@@ -4,7 +4,7 @@ import Menu from '../containers/Menu';
 import { MainMenu } from './MainMenu';
 import { InfoMenu } from './InfoMenu';
 export
-class Menus extends Component {
+class MenuRoutes extends Component {
 
 
   render() {

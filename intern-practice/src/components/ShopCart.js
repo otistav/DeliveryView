@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../styles/ShopCard.css';
 
 export default
-class ShopCardItems extends Component {
+class ShopCart extends Component {
   constructor() {
     super();
     this.totalCost = 0;
